@@ -1,0 +1,452 @@
+[
+  {
+    "#": 1,
+    "Nom": "Bulbizarre",
+    "Type(s)": "Plante/Poison",
+    "Cri": "Bulbizarre !",
+    "Date Sortie": "27/02/1996",
+    "Évolutions ?": "Herbizarre",
+    "Image": "001.jpg"
+  },
+  {
+    "#": 2,
+    "Nom": "Herbizarre",
+    "Type(s)": "Plante/Poison",
+    "Cri": "Herbizarre !",
+    "Date Sortie": "27/02/1996",
+    "Évolutions ?": "Florizarre",
+    "Image": "002.jpg"
+  },
+  {
+    "#": 3,
+    "Nom": "Florizarre",
+    "Type(s)": "Plante/Poison",
+    "Cri": "Florizarre !!",
+    "Date Sortie": "27/02/1996",
+    "Évolutions ?": "Non",
+    "Image": "003.jpg"
+  },
+  {
+    "#": 4,
+    "Nom": "Salamèche",
+    "Type(s)": "Feu",
+    "Cri": "Salamèche !",
+    "Date Sortie": "27/02/1996",
+    "Évolutions ?": "Reptincel",
+    "Image": "004.jpg"
+  },
+  {
+    "#": 5,
+    "Nom": "Reptincel",
+    "Type(s)": "Feu",
+    "Cri": "Reptincel !",
+    "Date Sortie": "27/02/1996",
+    "Évolutions ?": "Dracaufeu",
+    "Image": "005.jpg"
+  },
+  {
+    "#": 6,
+    "Nom": "Dracaufeu",
+    "Type(s)": "Feu/Vol",
+    "Cri": "(Rugissement)",
+    "Date Sortie": "27/02/1996",
+    "Évolutions ?": "Non",
+    "Image": "006.jpg"
+  },
+  {
+    "#": 7,
+    "Nom": "Carapuce",
+    "Type(s)": "Eau",
+    "Cri": "Carapuce !",
+    "Date Sortie": "27/02/1996",
+    "Évolutions ?": "Carabaffe",
+    "Image": "007.jpg"
+  },
+  {
+    "#": 8,
+    "Nom": "Carabaffe",
+    "Type(s)": "Eau",
+    "Cri": "Carabaffe !",
+    "Date Sortie": "27/02/1996",
+    "Évolutions ?": "Tortank",
+    "Image": "008.jpg"
+  },
+  {
+    "#": 9,
+    "Nom": "Tortank",
+    "Type(s)": "Eau",
+    "Cri": "Tortaaaank !",
+    "Date Sortie": "27/02/1996",
+    "Évolutions ?": "Non",
+    "Image": "009.jpg"
+  },
+  {
+    "#": 10,
+    "Nom": "Chenipan",
+    "Type(s)": "Insecte",
+    "Cri": "Chenipan !",
+    "Date Sortie": "27/02/1996",
+    "Évolutions ?": "Chrysacier",
+    "Image": "010.jpg"
+  },
+  {
+    "#": 11,
+    "Nom": "Chrysacier",
+    "Type(s)": "Insecte",
+    "Cri": "Chrysacier !",
+    "Date Sortie": "27/02/1996",
+    "Évolutions ?": "Papilusion",
+    "Image": "011.jpg"
+  },
+  {
+    "#": 12,
+    "Nom": "Papilusion",
+    "Type(s)": "Insecte/Vol",
+    "Cri": "Papilusion !",
+    "Date Sortie": "27/02/1996",
+    "Évolutions ?": "Non",
+    "Image": "012.jpg"
+  },
+  {
+    "#": 13,
+    "Nom": "Aspicot",
+    "Type(s)": "Insecte/Poison",
+    "Cri": "Aspicot !",
+    "Date Sortie": "27/02/1996",
+    "Évolutions ?": "Coconfort",
+    "Image": "013.jpg"
+  },
+  {
+    "#": 14,
+    "Nom": "Coconfort",
+    "Type(s)": "Insecte/Poison",
+    "Cri": "Coconfort !",
+    "Date Sortie": "27/02/1996",
+    "Évolutions ?": "Dardargnan",
+    "Image": "014.jpg"
+  },
+  {
+    "#": 15,
+    "Nom": "Dardargnan",
+    "Type(s)": "Insecte/Poison",
+    "Cri": "Dardargnan !",
+    "Date Sortie": "27/02/1996",
+    "Évolutions ?": "Non",
+    "Image": "015.jpg"
+  },
+  {
+    "#": 16,
+    "Nom": "Roucool",
+    "Type(s)": "Normal/Vol",
+    "Cri": "Roucool !",
+    "Date Sortie": "27/02/1996",
+    "Évolutions ?": "Roucoups",
+    "Image": "016.jpg"
+  },
+  {
+    "#": 17,
+    "Nom": "Roucoups",
+    "Type(s)": "Normal/Vol",
+    "Cri": "Roucoups !",
+    "Date Sortie": "27/02/1996",
+    "Évolutions ?": "Roucarnage",
+    "Image": "017.jpg"
+  },
+  {
+    "#": 18,
+    "Nom": "Roucarnage",
+    "Type(s)": "Normal/Vol",
+    "Cri": "Roucarnage !",
+    "Date Sortie": "27/02/1996",
+    "Évolutions ?": "Non",
+    "Image": "018.jpg"
+  },
+  {
+    "#": 19,
+    "Nom": "Rattata",
+    "Type(s)": "Normal",
+    "Cri": "Rattata !",
+    "Date Sortie": "27/02/1996",
+    "Évolutions ?": "Rattatac",
+    "Image": "019.jpg"
+  },
+  {
+    "#": 20,
+    "Nom": "Rattatac",
+    "Type(s)": "Normal",
+    "Cri": "Rattatac !",
+    "Date Sortie": "27/02/1996",
+    "Évolutions ?": "Non",
+    "Image": "020.jpg"
+  },
+  {
+    "#": 21,
+    "Nom": "Piafabec",
+    "Type(s)": "Normal/Vol",
+    "Cri": "Piafabec !",
+    "Date Sortie": "27/02/1996",
+    "Évolutions ?": "Rapasdepic",
+    "Image": "021.jpg"
+  },
+  {
+    "#": 22,
+    "Nom": "Rapasdepic",
+    "Type(s)": "Normal/Vol",
+    "Cri": "Rapasdepic !",
+    "Date Sortie": "27/02/1996",
+    "Évolutions ?": "Non",
+    "Image": "022.jpg"
+  },
+  {
+    "#": 23,
+    "Nom": "Abo",
+    "Type(s)": "Poison",
+    "Cri": "Abo !",
+    "Date Sortie": "27/02/1996",
+    "Évolutions ?": "Arbok",
+    "Image": "023.jpg"
+  },
+  {
+    "#": 24,
+    "Nom": "Arbok",
+    "Type(s)": "Poison",
+    "Cri": "Arbok !",
+    "Date Sortie": "27/02/1996",
+    "Évolutions ?": "Non",
+    "Image": "024.jpg"
+  },
+  {
+    "#": 25,
+    "Nom": "Pikachu",
+    "Type(s)": "Électrik",
+    "Cri": "Pika Pika !",
+    "Date Sortie": "27/02/1996",
+    "Évolutions ?": "Raichu",
+    "Image": "025.jpg"
+  },
+  {
+    "#": 26,
+    "Nom": "Raichu",
+    "Type(s)": "Électrik",
+    "Cri": "Raichu !",
+    "Date Sortie": "27/02/1996",
+    "Évolutions ?": "Non",
+    "Image": "026.jpg"
+  },
+  {
+    "#": 27,
+    "Nom": "Sabelette",
+    "Type(s)": "Sol",
+    "Cri": "Sabelette !",
+    "Date Sortie": "27/02/1996",
+    "Évolutions ?": "Sablaireau",
+    "Image": "027.jpg"
+  },
+  {
+    "#": 28,
+    "Nom": "Sablaireau",
+    "Type(s)": "Sol",
+    "Cri": "Sablaireau !",
+    "Date Sortie": "27/02/1996",
+    "Évolutions ?": "Non",
+    "Image": "028.jpg"
+  },
+  {
+    "#": 29,
+    "Nom": "Nidoran♀",
+    "Type(s)": "Poison",
+    "Cri": "Nidoran !",
+    "Date Sortie": "27/02/1996",
+    "Évolutions ?": "Nidorina",
+    "Image": "029.jpg"
+  },
+  {
+    "#": 30,
+    "Nom": "Nidorina",
+    "Type(s)": "Poison",
+    "Cri": "Nidorina !",
+    "Date Sortie": "27/02/1996",
+    "Évolutions ?": "Nidoqueen",
+    "Image": "030.jpg"
+  },
+  {
+    "#": 31,
+    "Nom": "Nidoqueen",
+    "Type(s)": "Poison/Sol",
+    "Cri": "Nidoqueen !",
+    "Date Sortie": "27/02/1996",
+    "Évolutions ?": "Non",
+    "Image": "031.jpg"
+  },
+  {
+    "#": 32,
+    "Nom": "Nidoran♂",
+    "Type(s)": "Poison",
+    "Cri": "Nidoran !",
+    "Date Sortie": "27/02/1996",
+    "Évolutions ?": "Nidorino",
+    "Image": "032.jpg"
+  },
+  {
+    "#": 33,
+    "Nom": "Nidorino",
+    "Type(s)": "Poison",
+    "Cri": "Nidorino !",
+    "Date Sortie": "27/02/1996",
+    "Évolutions ?": "Nidoking",
+    "Image": "033.jpg"
+  },
+  {
+    "#": 34,
+    "Nom": "Nidoking",
+    "Type(s)": "Poison/Sol",
+    "Cri": "Nidoking !",
+    "Date Sortie": "27/02/1996",
+    "Évolutions ?": "Non",
+    "Image": "034.jpg"
+  },
+  {
+    "#": 35,
+    "Nom": "Mélofée",
+    "Type(s)": "Fée",
+    "Cri": "Mélofée !",
+    "Date Sortie": "27/02/1996",
+    "Évolutions ?": "Mélodelfe",
+    "Image": "035.jpg"
+  },
+  {
+    "#": 36,
+    "Nom": "Mélodelfe",
+    "Type(s)": "Fée",
+    "Cri": "Mélodelfe !",
+    "Date Sortie": "27/02/1996",
+    "Évolutions ?": "Non",
+    "Image": "036.jpg"
+  },
+  {
+    "#": 37,
+    "Nom": "Goupix",
+    "Type(s)": "Feu",
+    "Cri": "Goupix !",
+    "Date Sortie": "27/02/1996",
+    "Évolutions ?": "Feunard",
+    "Image": "037.jpg"
+  },
+  {
+    "#": 38,
+    "Nom": "Feunard",
+    "Type(s)": "Feu",
+    "Cri": "Feunard !",
+    "Date Sortie": "27/02/1996",
+    "Évolutions ?": "Non",
+    "Image": "038.jpg"
+  },
+  {
+    "#": 39,
+    "Nom": "Rondoudou",
+    "Type(s)": "Normal/Fée",
+    "Cri": "Rondoudou !",
+    "Date Sortie": "27/02/1996",
+    "Évolutions ?": "Grodoudou",
+    "Image": "039.jpg"
+  },
+  {
+    "#": 40,
+    "Nom": "Grodoudou",
+    "Type(s)": "Normal/Fée",
+    "Cri": "Grodoudou !",
+    "Date Sortie": "27/02/1996",
+    "Évolutions ?": "Non",
+    "Image": "040.jpg"
+  },
+  {
+    "#": 41,
+    "Nom": "Nosferapti",
+    "Type(s)": "Poison/Vol",
+    "Cri": "Nosferapti !",
+    "Date Sortie": "27/02/1996",
+    "Évolutions ?": "Nosferalto",
+    "Image": "041.jpg"
+  },
+  {
+    "#": 42,
+    "Nom": "Nosferalto",
+    "Type(s)": "Poison/Vol",
+    "Cri": "Nosferalto !",
+    "Date Sortie": "27/02/1996",
+    "Évolutions ?": "Nostenfer",
+    "Image": "042.jpg"
+  },
+  {
+    "#": 43,
+    "Nom": "Mystherbe",
+    "Type(s)": "Plante/Poison",
+    "Cri": "Mystherbe !",
+    "Date Sortie": "27/02/1996",
+    "Évolutions ?": "Ortide",
+    "Image": "043.jpg"
+  },
+  {
+    "#": 44,
+    "Nom": "Ortide",
+    "Type(s)": "Plante/Poison",
+    "Cri": "Ortide !",
+    "Date Sortie": "27/02/1996",
+    "Évolutions ?": "Rafflesia",
+    "Image": "044.jpg"
+  },
+  {
+    "#": 45,
+    "Nom": "Rafflesia",
+    "Type(s)": "Plante/Poison",
+    "Cri": "Rafflesia !",
+    "Date Sortie": "27/02/1996",
+    "Évolutions ?": "Non",
+    "Image": "045.jpg"
+  },
+  {
+    "#": 46,
+    "Nom": "Paras",
+    "Type(s)": "Insecte/Plante",
+    "Cri": "Paaaras",
+    "Date Sortie": "27/02/1996",
+    "Évolutions ?": "Parasect",
+    "Image": "046.jpg"
+  },
+  {
+    "#": 47,
+    "Nom": "Parasect",
+    "Type(s)": "Insecte/Plante",
+    "Cri": "Parasect !",
+    "Date Sortie": "27/02/1996",
+    "Évolutions ?": "Non",
+    "Image": "047.jpg"
+  },
+  {
+    "#": 48,
+    "Nom": "Mimitoss",
+    "Type(s)": "Insecte/Poison",
+    "Cri": "Mimitoss !",
+    "Date Sortie": "27/02/1996",
+    "Évolutions ?": "Aéromite",
+    "Image": "048.jpg"
+  },
+  {
+    "#": 49,
+    "Nom": "Aéromite",
+    "Type(s)": "Insecte/Poison",
+    "Cri": "Aéromite !",
+    "Date Sortie": "27/02/1996",
+    "Évolutions ?": "Non",
+    "Image": "049.jpg"
+  },
+  {
+    "#": 50,
+    "Nom": "Taupiqueur",
+    "Type(s)": "Sol",
+    "Cri": "Taupiqueur !",
+    "Date Sortie": "27/02/1996",
+    "Évolutions ?": "Triopikeur",
+    "Image": "050.jpg"
+  }
+]
