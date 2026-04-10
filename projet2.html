@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neon Pulse — Gabriel Lemazurier</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;700;900&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── PAGE PROJET SPÉCIFIQUE ───────────────────── */
+
+    .projet-hero {
+      min-height: 70vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 60px;
+      border-bottom: 1px solid var(--ligne);
+    }
+
+    .projet-hero-gauche {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 80px 52px;
+      border-right: 1px solid var(--ligne);
+      position: relative;
+    }
+
+    .projet-hero-gauche::after {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 0; height: 0;
+      border-top: 64px solid var(--rouge);
+      border-left: 64px solid transparent;
+    }
+
+    .retour {
+      position: absolute;
+      top: 80px; left: 52px;
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: color .2s;
+    }
+    .retour::before {
+      content: '←';
+      font-size: 12px;
+    }
+    .retour:hover { color: var(--rouge); }
+
+    .projet-numero-hero {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 160px;
+      font-weight: 900;
+      color: rgba(0,0,0,0.04);
+      line-height: 1;
+      position: absolute;
+      bottom: 80px; right: 52px;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .projet-hero-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 3px;
+      color: var(--rouge);
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .projet-hero-tag::before {
+      content: '';
+      display: block;
+      width: 18px; height: 1px;
+      background: var(--rouge);
+    }
+
+    .projet-hero-titre {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(56px, 7vw, 100px);
+      font-weight: 900;
+      line-height: 0.88;
+      text-transform: uppercase;
+      letter-spacing: -2px;
+      margin-bottom: 32px;
+      animation: slideUp .9s cubic-bezier(.16,1,.3,1) both;
+    }
+
+    .projet-hero-intro {
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      line-height: 1.8;
+      color: var(--texte);
+      font-weight: 300;
+      max-width: 400px;
+      border-left: 2px solid var(--rouge);
+      padding-left: 16px;
+      animation: fadeUp .9s .2s both;
+    }
+
+    /* Panneau droit — image pleine */
+    .projet-hero-droite {
+      position: relative;
+      overflow: hidden;
+      background: var(--gris);
+    }
+
+    .projet-hero-droite img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+      filter: grayscale(8%);
+      transition: transform 8s ease;
+    }
+
+    .projet-hero-droite:hover img { transform: scale(1.03); }
+
+    /* Placeholder si pas d'image */
+    .projet-hero-droite .placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: repeating-linear-gradient(
+        -45deg,
+        transparent, transparent 28px,
+        rgba(0,0,0,0.025) 28px, rgba(0,0,0,0.025) 29px
+      );
+    }
+    .projet-hero-droite .placeholder span {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 18vw;
+      font-weight: 900;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(0,0,0,0.07);
+      text-transform: uppercase;
+      user-select: none;
+    }
+
+    /* ── BARRE MÉTA ───────────────────────────────── */
+    .projet-meta-barre {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-bottom: 1px solid var(--ligne);
+      max-width: 100%;
+    }
+
+    .meta-item {
+      padding: 28px 36px;
+      border-right: 1px solid var(--ligne);
+    }
+    .meta-item:last-child { border-right: none; }
+
+    .meta-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 8px;
+      letter-spacing: 3px;
+      color: var(--rouge);
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .meta-valeur {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--noir);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      line-height: 1.1;
+    }
+
+    /* ── CONTENU PROJET ───────────────────────────── */
+    .projet-contenu {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 52px 100px;
+    }
+
+    /* Grille 2 colonnes : texte + aside */
+    .projet-layout {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 80px;
+      padding-top: 80px;
+      align-items: start;
+      position: relative;
+    }
+
+    .projet-layout::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: var(--ligne);
+    }
+
+    /* ── BLOCS TEXTE ──────────────────────────────── */
+    .bloc {
+      margin-bottom: 56px;
+    }
+
+    .bloc-titre {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--rouge);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .bloc-titre::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--ligne);
+    }
+
+    .bloc-texte {
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      line-height: 1.85;
+      color: var(--texte);
+      font-weight: 300;
+    }
+    .bloc-texte p { margin-bottom: 16px; }
+    .bloc-texte p:last-child { margin-bottom: 0; }
+    .bloc-texte strong { font-weight: 500; color: var(--noir); }
+
+    /* ── GALERIE ──────────────────────────────────── */
+    .bloc-galerie {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      margin-top: 8px;
+      background: var(--ligne);
+      border: 1px solid var(--ligne);
+    }
+
+    .galerie-img {
+      aspect-ratio: 16/10;
+      overflow: hidden;
+      background: var(--gris);
+      position: relative;
+    }
+
+    .galerie-img:first-child {
+      grid-column: 1 / -1;
+      aspect-ratio: 21/9;
+    }
+
+    .galerie-img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+      transition: transform .6s cubic-bezier(.16,1,.3,1);
+      filter: grayscale(8%);
+    }
+    .galerie-img:hover img { transform: scale(1.03); filter: grayscale(0%); }
+
+    /* Placeholder galerie */
+    .galerie-img .ph {
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        -45deg,
+        transparent, transparent 20px,
+        rgba(0,0,0,0.02) 20px, rgba(0,0,0,0.02) 21px
+      );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .galerie-img .ph span {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 2px;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    /* ── ASIDE ────────────────────────────────────── */
+    .projet-aside {
+      position: sticky;
+      top: 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      background: var(--ligne);
+      border: 1px solid var(--ligne);
+    }
+
+    .aside-bloc {
+      background: var(--blanc);
+      padding: 24px 24px;
+      position: relative;
+      overflow: hidden;
+      transition: background .2s;
+    }
+    .aside-bloc:hover { background: var(--gris); }
+
+    .aside-bloc::after {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 0; height: 0;
+      border-top: 28px solid var(--rouge);
+      border-left: 28px solid transparent;
+      opacity: 0;
+      transition: opacity .2s;
+    }
+    .aside-bloc:hover::after { opacity: 1; }
+
+    .aside-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 8px;
+      letter-spacing: 3px;
+      color: var(--rouge);
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+
+    .aside-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--noir);
+      border: 1px solid var(--ligne);
+      padding: 5px 10px;
+      font-weight: 400;
+      transition: border-color .2s, color .2s;
+    }
+    .tag:hover { border-color: var(--rouge); color: var(--rouge); }
+
+    .aside-texte {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      line-height: 1.7;
+      color: var(--texte);
+      font-weight: 300;
+    }
+
+    /* ── NAV PROJETS ──────────────────────────────── */
+    .projet-nav {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-top: 1px solid var(--ligne);
+      margin-top: 80px;
+    }
+
+    .projet-nav-item {
+      padding: 36px 52px;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      border-right: 1px solid var(--ligne);
+      transition: background .2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .projet-nav-item:last-child { border-right: none; text-align: right; }
+
+    .projet-nav-item:hover { background: var(--gris); }
+
+    .projet-nav-item::after {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 0; height: 0;
+      border-top: 36px solid var(--rouge);
+      border-left: 36px solid transparent;
+      opacity: 0;
+      transition: opacity .2s;
+    }
+    .projet-nav-item:hover::after { opacity: 1; }
+
+    .nav-sens {
+      font-family: 'DM Mono', monospace;
+      font-size: 8px;
+      letter-spacing: 3px;
+      color: var(--rouge);
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    .nav-nom {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 28px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.5px;
+      color: var(--noir);
+      line-height: 1;
+    }
+
+    .nav-cat {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      color: var(--muted);
+      letter-spacing: 1px;
+    }
+
+    /* ── RESPONSIVE ───────────────────────────────── */
+    @media (max-width: 900px) {
+      .projet-hero { grid-template-columns: 1fr; }
+      .projet-hero-droite { display: none; }
+      .projet-hero-gauche { padding: 100px 24px 60px; border-right: none; }
+      .retour { left: 24px; }
+      .projet-meta-barre { grid-template-columns: 1fr 1fr; }
+      .meta-item:nth-child(2) { border-right: none; }
+      .meta-item:nth-child(3) { border-top: 1px solid var(--ligne); }
+      .meta-item:nth-child(4) { border-right: none; border-top: 1px solid var(--ligne); }
+      .meta-item { padding: 20px 24px; }
+      .projet-contenu { padding: 0 24px 80px; }
+      .projet-layout { grid-template-columns: 1fr; gap: 48px; }
+      .projet-aside { position: static; }
+      .projet-nav { grid-template-columns: 1fr; }
+      .projet-nav-item { border-right: none; border-bottom: 1px solid var(--ligne); padding: 28px 24px; }
+      .projet-nav-item:last-child { text-align: left; border-bottom: none; }
+      .bloc-galerie { grid-template-columns: 1fr; }
+      .galerie-img:first-child { aspect-ratio: 16/9; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="curseur" id="curseur"></div>
+  <div class="curseur-anneau" id="curseurAnneau"></div>
+
+  <nav class="navigation">
+    <a href="portfolio-mmi.html" class="nav-logo">GL<span>.</span></a>
+    <ul class="nav-liens">
+      <li><a href="portfolio-mmi.html">Accueil</a></li>
+      <li><a href="portfolio-mmi.html#a-propos">À propos</a></li>
+      <li><a href="portfolio-mmi.html#projets">Projets</a></li>
+      <li><a href="portfolio-mmi.html#services">Services</a></li>
+      <li><a href="portfolio-mmi.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── HERO ───────────────────────────────────────── -->
+  <section class="projet-hero">
+
+    <div class="projet-hero-gauche">
+      <a href="portfolio-mmi.html#projets" class="retour">Tous les projets</a>
+      <div class="projet-numero-hero">01</div>
+
+      <div class="projet-hero-tag">Site pokémon</div>
+      <h1 class="projet-hero-titre"><br>Poképedia</h1>
+      <p class="projet-hero-intro">
+        Site réaliser dans le cadre d'un projet universitaire pour un site sur le théme des pokémon.
+      </p>
+    </div>
+
+    <div class="projet-hero-droite">
+      <!-- Remplace src par ton image principale -->
+      <img src="images/apercu1.png" alt="Neon Pulse">
+      <!-- Si pas d'image, décommente ça :
+      <div class="placeholder"><span>NP</span></div>
+      -->
+    </div>
+
+  </section>
+
+  <!-- ── BARRE MÉTA ──────────────────────────────────── -->
+  <div class="projet-meta-barre">
+    <div class="meta-item">
+      <div class="meta-label">Contexte</div>
+      <div class="meta-valeur">Projet universitaire</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">Année</div>
+      <div class="meta-valeur">2024 — 2025</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">Durée</div>
+      <div class="meta-valeur">4 semaines</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">Rôle</div>
+      <div class="meta-valeur">Design & Dev</div>
+    </div>
+  </div>
+
+  <!-- ── CONTENU ─────────────────────────────────────── -->
+  <div class="projet-contenu">
+    <div class="projet-layout">
+
+      <!-- Colonne principale -->
+      <div class="projet-main">
+
+        <div class="bloc">
+          <div class="bloc-titre">Contexte</div>
+          <div class="bloc-texte">
+            <p>
+              Ce projet a été réalisé dans dans le cadre d'une saé universitaire. L'objectif était de concevoir et développer un <strong>site en apprenant le tableau en php</strong>.
+            </p>
+            <p>
+              Je me suis imposé une identité visuelle originale représentant l'univers de la gamboy pokémon. L'univers "Poképedia" a été créé de toutes pièces — nom, identité, palette, typographie.
+            </p>
+          </div>
+        </div>
+
+        <div class="bloc">
+          <div class="bloc-titre">Démarche</div>
+          <div class="bloc-texte">
+            <p>
+              Le projet a démarré par une <strong>phase de recherche et de moodboarding</strong> : analyse de l'identité visuelle de la gameboy pokémon, identification des codes visuels du genre.
+            </p>
+            <p>
+              Une fois la direction artistique choisie, j'ai réalisé les wireframes sur Figma avant de passer à l'intégration HTML/CSS/JS. L'accent a été mis sur les <strong>animations CSS et les micro-interactions</strong> pour renforcer l'atmosphère de la gamboy.
+            </p>
+          </div>
+        </div>
+
+        <!-- Galerie -->
+        <div class="bloc">
+          <div class="bloc-titre">Visuels</div>
+          <div class="bloc-galerie">
+            <div class="galerie-img">
+              <img src="images/apercu1.png" alt="Capture principale">
+              <!-- <div class="ph"><span>Capture 01</span></div> -->
+            </div>
+            <div class="galerie-img">
+              <div class="ph"><span>Capture 02</span></div>
+            </div>
+            <div class="galerie-img">
+              <div class="ph"><span>Capture 03</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bloc">
+          <div class="bloc-titre">Résultats & apprentissages</div>
+          <div class="bloc-texte">
+            <p>
+              Ce projet m'a permis de consolider mes compétences en <strong>php</strong> et d'explorer les concepts de base de la programmation orientée objet.
+            </p>
+            <p>
+              La principale difficulté a été de maintenir des <strong>performances correctes</strong> malgré le nombre important d'images dans la ribrique galerie. J'ai appris à utiliser les tableaux php et les envois automatiques de emails.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Aside -->
+      <aside class="projet-aside">
+
+        <div class="aside-bloc">
+          <div class="aside-label">Compétences mobilisées</div>
+          <div class="aside-tags">
+            <span class="tag">UI Design</span>
+            <span class="tag">Direction artistique</span>
+            <span class="tag">Intégration web</span>
+            <span class="tag">Animation CSS</span>
+            <span class="tag">UX / Navigation</span>
+            <span class="tag">Moodboard</span>
+            <span class="tag">PHP</span>
+          </div>
+        </div>
+
+        <div class="aside-bloc">
+          <div class="aside-label">Outils utilisés</div>
+          <div class="aside-tags">
+            <span class="tag">Figma</span>
+            <span class="tag">HTML5</span>
+            <span class="tag">CSS3</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">VS Code</span>
+            <span class="tag">Photoshop</span>
+            <span class="tag">PHPMyAdmin</span>
+          </div>
+        </div>
+
+        <div class="aside-bloc">
+          <div class="aside-label">Type de projet</div>
+          <div class="aside-texte">
+            Projet universitaire réalisé en 1re année de BUT MMI. Évaluation portant sur l'identité visuelle, la qualité du code et l'expérience utilisateur.
+          </div>
+        </div>
+
+        <div class="aside-bloc">
+          <div class="aside-label">Liens</div>
+          <div class="aside-tags">
+            <a href="projets/projet-2/index.php" class="tag" target="_blank">Voir le site ↗</a>
+            <a href="#" class="tag">Figma ↗</a>
+          </div>
+        </div>
+
+      </aside>
+
+    </div>
+  </div>
+
+  <!-- ── NAVIGATION PROJETS ──────────────────────────── -->
+  <div class="projet-nav">
+    <a href="projets3.html" class="projet-nav-item">
+      <span class="nav-sens">← Projet précédent</span>
+      <span class="nav-nom">Projet précédent</span>
+      <span class="nav-cat">Catégorie</span>
+    </a>
+    <a href="neonpulse.html" class="projet-nav-item">
+      <span class="nav-sens">Projet suivant →</span>
+      <span class="nav-nom">Projet suivant</span>
+      <span class="nav-cat">Catégorie</span>
+    </a>
+  </div>
+
+  <footer class="pied-de-page">
+    <span>© 2025 Gabriel Lemazurier — MMI</span>
+    <span>Design & Dev</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
